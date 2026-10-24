@@ -179,5 +179,18 @@
         "sourceLabel": "original source & template"
       }
     ]
+  },
+  {
+    "title": "rust is easy",
+    "description": "Start from Python-like code in a Rust program and fix compiler errors one at a time until it is valid Rust.",
+    "given": [
+      {
+        "date": "2023-05-27",
+        "venue": "PyCon Italia 2023",
+        "slides": "https://github.com/baggiponte/pyconit-rust-is-easy/blob/502627c1fdb5dbd848d1026ff521445ba5a505c5/pyconit-rust-is-easy.pdf",
+        "recording": "https://www.youtube.com/watch?v=09drs_8PJJM",
+        "source": "https://github.com/baggiponte/pyconit-rust-is-easy/tree/502627c1fdb5dbd848d1026ff521445ba5a505c5"
+      }
+    ]
   }
 ]
