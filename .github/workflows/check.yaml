@@ -1,3 +1,4 @@
+# Checks only: production is deployed by Cloudflare Workers Builds (see README).
 name: Check talks
 on:
   push:
