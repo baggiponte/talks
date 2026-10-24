@@ -91,7 +91,7 @@ function renderTimeline(talks) {
         <span style="left: ${x(`${year}-01-01`).toFixed(2)}%">${year}</span>`);
   const lists = years.toReversed().map(year => {
     const items = appearances.filter(given => given.date.startsWith(year)).map(given => `
-          <li data-talk="${given.talk}">${time(given.date)}<span><span class="talk">${given.slides ? link(given.slides, given.title) : escape(given.title)}</span>${escape(given.venue)}</span></li>`);
+          <li data-talk="${given.talk}">${time(given.date)}<span><span class="talk">${given.slides ? link(given.slides, given.title) : escape(given.title)}</span>${venueLabel(given.venue, true)}</span></li>`);
     return `
       <h2>${year}</h2>
       <ol>${items.join("")}
