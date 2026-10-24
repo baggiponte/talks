@@ -46,12 +46,18 @@
     h2 a:hover { color: var(--link); }
     article p { margin: 8px 0 16px; color: var(--muted); }
     article .meta { margin: 0; font-size: .95rem; }
-    /* Every edition of a talk given more than once, newest first. */
-    .editions { list-style: none; margin: 0; padding: 0 0 0 16px; border-left: 2px solid var(--border); font-size: .9rem; }
-    .editions li { display: grid; grid-template-columns: 6.5rem minmax(0, 1fr) auto; gap: 0 16px; padding: 4px 0; }
-    .editions time { color: var(--muted); white-space: nowrap; }
+    /* Every edition of a talk given more than once, newest first, as a timeline: a dot per edition on a thin line. */
+    .editions { list-style: none; margin: 4px 0 0; padding: 0 0 0 28px; font-size: .9rem; }
+    .editions li { position: relative; display: grid; grid-template-columns: 6.5rem minmax(0, 1fr) auto; gap: 0 16px; padding: 7px 0; }
+    .editions li::before { content: ""; position: absolute; left: -24px; top: 14px; width: 7px; height: 7px; border-radius: 50%; border: 1.5px solid var(--muted); background: var(--bg); z-index: 1; }
+    .editions li:first-child::before { border-color: var(--link); background: var(--link); box-shadow: 0 0 0 4px color-mix(in srgb, var(--link) 18%, transparent); }
+    .editions li:not(:last-child)::after { content: ""; position: absolute; left: -19.5px; top: 19px; height: 100%; width: 1px; background: var(--muted); opacity: .35; }
+    .editions time { color: var(--muted); white-space: nowrap; font-variant-numeric: tabular-nums; }
+    .editions li:first-child > span:first-of-type { font-weight: 600; }
     .editions em { display: block; color: var(--muted); }
     .editions .links { gap: 12px; font-size: inherit; justify-content: end; }
+    .editions .links a { color: var(--muted); text-decoration-color: var(--border); }
+    .editions .links a:hover { color: var(--link); text-decoration-color: currentColor; }
     .links { display: flex; flex-wrap: wrap; gap: 24px; font-size: .95rem; }
     /* Date column as in the blog's post list. */
     article { display: grid; grid-template-columns: minmax(0, 1fr) 8.5rem; column-gap: 2rem; }
