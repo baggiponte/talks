@@ -51,6 +51,11 @@
         "date": "2025-06-07",
         "venue": "PyData London 2025",
         "slides": "https://speakerdeck.com/baggiponte/llm-inference-arithmetics-the-theory-behind-model-serving"
+      },
+      {
+        "date": "2025-04-23",
+        "venue": "PyCon DE & PyData 2025",
+        "slides": "https://speakerdeck.com/baggiponte/llm-inference-arithmetics-the-theory-behind-model-serving"
       }
     ]
   },
