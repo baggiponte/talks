@@ -44,19 +44,19 @@ export async function renderCatalog(root, decks) {
   talks.sort((a, b) => b.given[0].date.localeCompare(a.given[0].date));
 
   const articles = talks.map(({ title, description, given: [latest, ...rest] }) => {
-    // A talk given once links its slides directly; repeats list every edition instead.
-    const meta = rest.length ? `given ${rest.length === 1 ? "twice" : `${rest.length + 1} times`}, latest at ${escape(latest.venue)}` : venueLabel(latest.venue);
+    // A talk given once names its venue and links its slides directly; repeats list every edition instead.
+    const meta = rest.length ? "" : `
+      <p class="meta">${venueLabel(latest.venue)}</p>`;
     const more = rest.length ? `
       <ol class="editions">${[latest, ...rest].map(given => `
-        <li>${time(given.date)}<span>${venueLabel(given.venue, true)}${given.title ? `<em>${escape(given.title)}</em>` : ""}</span><span class="links">${links(given, ["slides", "video", "code"])}</span></li>`).join("")}
+        <li>${time(given.date)}<span>${venueLabel(given.venue, true)}</span><span class="links">${links(given, ["slides", "video", "code"])}</span></li>`).join("")}
       </ol>` : linksOf(latest);
     // Not every edition has slides online: the heading links the newest one that does.
     const slides = [latest, ...rest].find(given => given.slides)?.slides;
     return `
     <article>
       <h2>${slides ? link(slides, title) : escape(title)}</h2>
-      ${time(latest.date)}
-      <p class="meta">${meta}</p>
+      ${time(latest.date)}${meta}
       <p>${escape(description)}</p>${more}
     </article>`;
   });
