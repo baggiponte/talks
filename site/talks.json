@@ -91,6 +91,12 @@
         "date": "2024-12-04",
         "venue": "PyData Global 2024",
         "slides": "https://speakerdeck.com/baggiponte/foundational-models-for-time-series-forecasting-are-we-there-yet"
+      },
+      {
+        "date": "2024-11-19",
+        "venue": "PyData Milano at Spotify",
+        "slides": "https://speakerdeck.com/baggiponte/foundational-models-for-time-series-forecasting-are-we-there-yet",
+        "recording": "https://www.youtube.com/watch?v=bWXOwC7h5C0"
       }
     ]
   },
