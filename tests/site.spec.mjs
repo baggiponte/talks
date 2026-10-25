@@ -42,6 +42,12 @@ test("map shows a city's talks and lights up every city a talk went to", async (
   const given = await page.locator('.map li[data-city="Milan"]').count();
   await expect(page.locator('.card.on[data-city="Milan"] li')).toHaveCount(given);
   await expect(page.locator(".map li.on")).toHaveCount(given);
+  // The card stays open while the pointer crosses the bare map between the circle and the card.
+  const card = page.locator('.card.on[data-city="Milan"]');
+  const circle = await milan.boundingBox();
+  const edge = await card.boundingBox();
+  await page.mouse.move(edge.x + 8, circle.y + circle.height / 2, { steps: 20 });
+  await expect(card).toBeVisible();
   await page.locator('.map li[data-talk="0"]').first().click();
   const editions = await page.locator('.map li[data-talk="0"]').count();
   await expect(page.locator(".map li.on")).toHaveCount(editions);
