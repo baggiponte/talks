@@ -57,6 +57,17 @@ test("map shows a city's talks and lights up every city a talk went to", async (
   await expect(page.locator(".map .total strong")).toHaveText(`${total} talks`);
 });
 
+test("the map tab does not jump to the top of the page", async ({ page }) => {
+  await page.goto("/");
+  await page.mouse.wheel(0, 400);
+  await expect.poll(() => page.evaluate(() => scrollY)).toBeGreaterThan(0);
+  const before = await page.evaluate(() => scrollY);
+  // Click in place: a locator click would first scroll the tab into view.
+  await page.locator('.views a[data-view="map"]').evaluate(tab => tab.click());
+  await expect(page).toHaveURL(/#map$/);
+  expect(await page.evaluate(() => scrollY)).toBe(before);
+});
+
 for (const { slug, count } of decks) {
   test(`${slug}: cover, direct slides, final slide and 404s`, async ({ page, request }) => {
     const errors = [];
