@@ -43,7 +43,9 @@
     header { margin: 64px 0 40px; }
     h1 { font-size: clamp(2.5rem, 8vw, 4rem); line-height: 1.1; letter-spacing: -.04em; margin: 0; }
     header p { color: var(--muted); font-size: 1.1rem; }
-    article { padding: 26px 0; border-top: 1px solid var(--border); }
+    /* Date column as in the blog's post list. */
+    article { display: grid; grid-template-columns: minmax(0, 1fr) 8.5rem; column-gap: 2rem; padding: 26px 0; border-top: 1px solid var(--border); }
+    article > * { grid-column: 1; }
     h2 { font-size: 1.35rem; line-height: 1.3; letter-spacing: -.025em; margin: 0 0 8px; }
     h2 a { color: inherit; text-decoration: none; }
     h2 a:hover { color: var(--link); }
@@ -62,9 +64,6 @@
     /* Organiser logos (site/venues.json) on a small white tile, so dark marks stay visible in dark mode. */
     .logo { display: inline-block; box-sizing: border-box; width: 20px; height: 20px; margin-right: 8px; vertical-align: -5px; }
     img.logo { padding: 2px; border-radius: 5px; background: #fff; box-shadow: 0 0 0 1px var(--border); object-fit: contain; }
-    /* Date column as in the blog's post list. */
-    article { display: grid; grid-template-columns: minmax(0, 1fr) 8.5rem; column-gap: 2rem; }
-    article > * { grid-column: 1; }
     /* Editions span the date column too, so the link columns end flush with the date. */
     article > .editions { grid-column: 1 / -1; }
     article > time { grid-column: 2; grid-row: 1; justify-self: end; white-space: nowrap; color: var(--muted); font-size: .95rem; line-height: 1.5; }
