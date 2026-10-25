@@ -105,7 +105,7 @@
     .places { position: relative; container-type: inline-size; }
     .places svg { display: block; width: 100%; height: auto; }
     .places path { stroke: color-mix(in srgb, var(--ink) 22%, transparent); stroke-width: 3.2; stroke-linecap: round; }
-    .place { position: absolute; left: var(--x); top: var(--y); width: max(10px, calc(var(--r) * 200cqw / 960)); aspect-ratio: 1; translate: -50% -50%; padding: 0; border-radius: 50%; border: 1.5px solid var(--muted); background: color-mix(in srgb, var(--link) 14%, var(--bg)); font: inherit; cursor: pointer; transition: opacity .15s; }
+    .place { position: absolute; left: var(--x); top: var(--y); width: max(10px, calc(var(--r) * 200cqw / 960)); aspect-ratio: 1; translate: -50% -50%; padding: 0; border-radius: 50%; border: 1.5px solid var(--muted); background: color-mix(in srgb, var(--link) 35%, var(--bg)); font: inherit; cursor: pointer; transition: opacity .15s; }
     .place::before { content: ""; position: absolute; inset: -4px; border-radius: 50%; }
     .place span { position: absolute; top: 50%; left: calc(100% + 6px); translate: 0 -50%; white-space: nowrap; font-size: .85rem; font-weight: 600; color: var(--ink); text-shadow: 0 0 2px var(--bg), 0 0 4px var(--bg), 0 0 6px var(--bg); pointer-events: none; }
     .place.left span { left: auto; right: calc(100% + 6px); }
