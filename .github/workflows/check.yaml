@@ -58,6 +58,8 @@ jobs:
           cache: pnpm
       - name: Install dependencies
         run: pnpm install --frozen-lockfile
+      - name: Check formatting and lint
+        run: pnpm lint
       - name: Type-check
         run: pnpm typecheck
       - name: Run unit tests
