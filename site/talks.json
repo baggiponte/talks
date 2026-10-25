@@ -250,6 +250,17 @@
     ]
   },
   {
+    "title": "build your own ai movies buddy",
+    "description": "A hands-on workshop on retrieval-augmented generation: build an AI movie expert from scratch, with Fabio Lipreri.",
+    "workshop": true,
+    "given": [
+      {
+        "date": "2024-03-23",
+        "venue": "AMLD EPFL 2024"
+      }
+    ]
+  },
+  {
     "title": "use rust in your python package",
     "description": "Getting started with PyO3 and maturin: Python packaging meets Rust.",
     "given": [
