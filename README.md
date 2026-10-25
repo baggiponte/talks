@@ -25,6 +25,7 @@ pnpm install --frozen-lockfile
 uvx --from prek==0.5.7 prek install    # Zizmor and Gitleaks hooks
 pnpm exec slidev decks/<slug>/slides.md  # edit one deck with hot reload
 pnpm typecheck                         # tsc, no emit
+pnpm test:unit                         # catalog and data checks, no browser (~2 s)
 pnpm check                             # build + cf deploy --dry-run
 pnpm exec playwright install chromium
 pnpm test                              # browser tests against local Workers runtime
