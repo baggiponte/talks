@@ -20,6 +20,7 @@
   --border: rgba(26, 25, 21, 0.12);
   --rule: rgba(26, 25, 21, 0.22);
   --link: #e0562b;
+  --mark: #ffd9c7;
   --sans: "Instrument Sans Variable", system-ui, -apple-system, sans-serif;
   --display: "Bricolage Grotesque Variable", var(--sans);
   --gutter: 32px;
@@ -36,6 +37,7 @@
   --border: rgba(241, 237, 228, 0.13);
   --rule: rgba(241, 237, 228, 0.24);
   --link: #ff8a5c;
+  --mark: rgba(255, 138, 92, 0.28);
   color-scheme: dark;
 }
 body {
@@ -100,9 +102,12 @@ header.top {
   color: var(--ink);
   background: color-mix(in srgb, var(--ink) 5%, transparent);
 }
+/* The active tab gets the same pastel marker stroke as the blog's rotating bio. */
 .bar .tab.active {
-  color: var(--bg);
-  background: var(--ink);
+  color: var(--ink);
+  text-decoration: underline 0.5em var(--mark);
+  text-underline-offset: -0.3em;
+  text-decoration-skip-ink: none;
 }
 .theme-toggle {
   all: unset;
